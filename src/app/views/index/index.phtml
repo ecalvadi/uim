@@ -2,7 +2,27 @@
 
     <!-- Begin page content -->
     <main role="main" class="container">
-      <h1 class="mt-5">Bienvenido a UIM</h1>
+        <div class="row">
+            <div class="card bg-secondary offset-sm-4" style="max-width: 20rem;">
+                <div class="card-header">Ingresa con tu usuario y contraseña</div>
+                <div class="card-body">
+                    <form action="" method="POST">
+                        <fieldset>
+                            <div class="form-group">
+                                <label for="user">Ingresa tu rut</label>
+                                <input type="text" class="form-control" id="rut" name="rut" aria-describedby="userHelp" placeholder="Ingresa tu rut sin puntos ni guión">
+                                <small id="userHelp" class="form-text text-muted">Ingresa tu rut sin puntos ni guión, ejemplo: 112223334.</small>
+                            </div>
+                            <div class="form-group">
+                                <label for="pass">Contraseña</label>
+                                <input type="password" class="form-control" id="pass" name="pass" placeholder="Ingresa tu contraseña">
+                            </div>
+                        </fieldset>
 
+                        <button class="btn btn-primary btn-block">Ingresar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
     </main>
 
