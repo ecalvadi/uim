@@ -9,26 +9,33 @@ class IndexController extends AppController
 
     public function index()
     {
+        $status = array('status' => true);
+
         if(Input::hasPost(rut)) {
-            $this->login(Input::post('rut'), Input::post('email'));
+            $status = $this->login(Input::post('rut'), Input::post('pass'));
         }
     }
 
     /**
      * Método encargado de manerjar el login, en caso de no encontrar el usuario no hará nada
      *
-     * @param String $email
+     * @param String $rut
      * @param String $pass
      */
-    private function login($email, $pass = '') {
-        $user = (new User)->find_first("conditions: rut='$email'");
+    private function login($rut, $pass = '') {
+        $user = (new User)->find_first("conditions: rut='$rut'");
 
         //Si encontramos al usuario
         if($user) {
             //Si la contraseña es igual a la entregada se guardarán los datos del login
             if($user->password == $pass) {
-                //this-session
+                $this->set_session($user->id, $user->name, $user->email, $user->role_id);
+                return array('status' => true, 'msg' => "Login OK");
+            } else {
+                return array('status' => false, 'msg' => "La contraseña es incorrecta");
             }
+        } else {
+            return array('status' => false, 'msg' => "El Usuario '$rut' no existe");
         }
     }
 

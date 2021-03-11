@@ -1,10 +1,33 @@
-<?php View::partial('menu/inicio', '', 'index'); ?>
+<?php
+switch ($session['role']) {
+    case 2:
+        View::partial('menu/teacher', '', 'index');
+        break;
+    case 3:
+        View::partial('menu/psychoanalist', '', 'index');
+        break;
+    case 4:
+        View::partial('menu/student', '', 'index');
+        break;
+    default :
+        View::partial('menu/inicio', '', 'index');
+        break;
+}
+?>
+<?php  ?>
 
     <!-- Begin page content -->
     <main role="main" class="container">
         <div class="row">
             <div class="card col-md-4 offset-md-4">
                 <div class="card-body">
+                    <?php if ($session['role'] == 2) { ?>
+                        <h4 class="card-title">Bienvenido profesor</h4>
+                    <?php } elseif ($session['role'] == 3) { ?>
+                        <h4 class="card-title">Bienvenido Psicólogo</h4>
+                    <?php } elseif ($session['role'] == 4) { ?>
+                        <h4 class="card-title">Bienvenido estudiante</h4>
+                    <?php } else { ?>
                     <h4 class="card-title">Ingresa al sistema</h4>
                     <form method="POST">
                         <fieldset>
@@ -21,7 +44,16 @@
 
                         <button class="btn btn-primary btn-block">Ingresar</button>
                     </form>
+                    <?php } ?>
                 </div>
+                <?php if($status['status']) : ?>
+                    <br>
+                    <div class="alert alert-dismissible alert-warning">
+                        <button type="button" class="close" data-dismiss="alert">&times;</button>
+                        <p class="mb-0"><?= $status['msg'] ?></a>.</p>
+                    </div>
+                <?php endif; ?>
+
             </div>
 
         </div>
