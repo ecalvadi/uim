@@ -47,7 +47,7 @@ class AclSecurity
             "index"     => ["index"],
             "courses"   => ["index", "detail"],
             "student"   => ["profile"],
-            "test"      => ["new"],
+            "test"      => ["create", "edit"],
             "salir"     => ["index"]
         ];
 

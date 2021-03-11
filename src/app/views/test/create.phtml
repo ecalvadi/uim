@@ -1,0 +1,59 @@
+<?php View::partial('menu/teacher', '', array('courses', $session['name'])); ?>
+
+    <main role="main" class="container">
+        <div class="row">
+            <div class="card col-md-12">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <form action="/test/create/<?=$test->course_id?>/<?=$test->id?>" method="POST">
+                                <fieldset>
+                                    <legend>Crear/Editar prueba</legend>
+                                    <div class="form-group">
+                                        <label for="title">Título</label>
+                                        <input type="text" class="form-control" id="title" name="title" aria-describedby="titleHelp" placeholder="Ingresa el título de la prueba" required="required" value="<?=$test->name?>" <?php if($test->published) echo "disabled"; ?>>
+                                        <small id="titleHelp" class="form-text text-muted">Por favor, ingresa un título a tu prueba.</small>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="desc">Descripción</label>
+                                        <textarea class="form-control" id="desc" name="desc" aria-describedby="titleHelp" rows="3" required="required" <?php if($test->published) echo "disabled"; ?> ><?=$test->description?></textarea>
+                                        <small id="descHelp" class="form-text text-muted">Por favor, ingresa una breve descripción de tu prueba.</small>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="start">Inicio Prueba</label>
+                                        <input type="datetime" class="form-control" id="start" name="start"
+                                               aria-describedby="startHelp" required="required"
+                                               value="<?=$test->start?>" <?php if($test->published) echo "disabled"; ?>/>
+                                        <small id="startHelp" class="form-text text-muted">Por favor, ingresa la fecha y hora de inicio en formato: "Año-Mes-Día Hora:minuto:segundo".</small>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="end">Finalizar prueba</label>
+                                        <input type="datetime" class="form-control" id="end" name="end"
+                                               aria-describedby="endHelp" required="required"
+                                               value="<?=$test->end?>" <?php if($test->published) echo "disabled"; ?>/>
+                                        <small id="endHelp" class="form-text text-muted">Por favor, ingresa una La fecha y hora de término en formato: "Año-Mes-Día Hora:minuto:segundo".</small>
+                                    </div>
+                                    <div class="form-check">
+                                        <label class="form-check-label">
+                                            <?php if($test->published) : ?>
+                                                <input class="form-check-input" type="checkbox" value="1" checked disabled>
+                                            <?php else : ?>
+                                                <input name="published" id="published" class="form-check-input" type="checkbox" value="1">
+                                            <?php endif; ?>
+                                            Publicar prueba (una vez publicada no se podrá editar la prueba)
+                                        </label>
+                                    </div>
+                                    <br>
+                                <button type="submit" class="btn btn-primary" <?php if($test->published) echo "disabled"; ?>>Guardar</button>
+                                </fieldset>
+                            </form>
+                        </div>
+                        <div class="col-md-6">
+                            <h4>Preguntas de la prueba</h4>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main><?php

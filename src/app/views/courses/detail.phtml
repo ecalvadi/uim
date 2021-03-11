@@ -57,14 +57,17 @@
                                     <td><?=$test->creation?></td>
                                     <td><?=$test->start?></td>
                                     <td><?=$test->end?></td>
-                                    <td><a href="/student/profile/<?=$test->id?>" class="btn btn-sm btn-info">Ver Prueba</a></td>
+                                    <td>
+                                        <a href="/test/create/<?=$test->course_id?>/<?=$test->id?>" class="btn btn-sm btn-primary">Editar Prueba</a>
+                                        <a href="/test/view/<?=$test->id?>" class="btn btn-sm btn-info">Ver Prueba</a>
+                                    </td>
                                 </tr>
                             <?php endforeach; ?>
                             </tbody>
                         </table>
                         <div class="row">
                             <div class="col-md-4 offset-md-4">
-                                <a href="/test/new/<?=$course->id?>" class="btn btn-block btn-primary">Crear prueba</a>
+                                <a href="/test/create/<?=$course->id?>" class="btn btn-block btn-primary">Crear prueba</a>
                             </div>
                         </div>
                     </div>
