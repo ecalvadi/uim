@@ -1,16 +1,16 @@
 <?php
 switch ($session['role']) {
     case 2:
-        View::partial('menu/teacher', '', 'index');
+        View::partial('menu/teacher', '', array('index', $session['name']));
         break;
     case 3:
-        View::partial('menu/psychoanalist', '', 'index');
+        View::partial('menu/psychoanalist', '', array('index', $session['name']));
         break;
     case 4:
-        View::partial('menu/student', '', 'index');
+        View::partial('menu/student', '', array('index', $session['name']));
         break;
     default :
-        View::partial('menu/inicio', '', 'index');
+        View::partial('menu/inicio', '', array('index', $session['name']));
         break;
 }
 ?>

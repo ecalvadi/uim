@@ -39,19 +39,23 @@ class AclSecurity
         //y las accioes son los métodos o fucniones públicas dentro del controlador.
 
         $admin_access = [
-            "index"     => ["index"]
+            "index"     => ["index"],
+            "salir"     => ["index"]
         ];
 
         $professor_access = [
-            "index"     => ["index"]
+            "index"     => ["index"],
+            "salir"     => ["index"]
         ];
 
         $psycho_access = [
-            "index"     => ["index"]
+            "index"     => ["index"],
+            "salir"     => ["index"]
         ];
 
         $student_access = [
-            "index"     => ["index"]
+            "index"     => ["index"],
+            "salir"     => ["index"]
         ];
 
         $guest_access = [
