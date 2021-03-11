@@ -38,11 +38,12 @@ class CoursesController extends AppController {
             $usrData = (new User)->find_first("conditions: id='$studData->user_id'");
 
             $auxStudent = array(
-                'id' => $stud->id,
-                'name' => $usrData->name,
-                'registration' => $studData->registration,
-                'birth' => $studData->birthdate,
-                'active' => $studData->active
+                'id'            => $stud->id,
+                'id_est'        => $studData->id,
+                'name'          => $usrData->name,
+                'registration'  => $studData->registration,
+                'birth'         => $studData->birthdate,
+                'active'        => $studData->active
             );
 
             array_push($auxArr, $auxStudent);
@@ -51,7 +52,7 @@ class CoursesController extends AppController {
         $this->students = $auxArr;
 
         //Obtener las pruebas del curso
-        $this->tests = (new Test)->find("conditions: course_id='$courseId'");
+        $this->tests = (new Test)->find("conditions: course_id='$courseId' AND active='1'");
 
     }
 }

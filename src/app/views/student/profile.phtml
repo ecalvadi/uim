@@ -1,0 +1,22 @@
+<?php View::partial('menu/teacher', '', array('courses', $session['name'])); ?>
+
+<main role="main" class="container">
+    <div class="row">
+        <div class="card col-md-8 offset-md-2">
+            <br>
+            <div class="row">
+                <div class="col-md4 offset-md-4">
+                    <?php if(!$student->photo) : ?>
+                        <img src="/img/profile.png" class="img-rounded" alt="<?=$user->name?>" width="200px">
+                    <?php endif; ?>
+                </div>
+            </div>
+            <p><b>Rut: </b><?=$user->rut?></p>
+            <p><b>Nombre: </b><?=$user->name?></p>
+            <p><b>Correo: </b><?=$user->email?></p>
+            <p><b>Matrícula: </b><?=$student->registration?></p>
+            <p><b>Fecha de Nacimiento: </b><?=$student->birthdate?></p>
+            <p><b>Perfil: </b><?=$student->profile?></p>
+        </div>
+    </div>
+</main>

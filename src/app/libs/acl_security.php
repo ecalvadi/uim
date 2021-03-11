@@ -46,6 +46,8 @@ class AclSecurity
         $professor_access = [
             "index"     => ["index"],
             "courses"   => ["index", "detail"],
+            "student"   => ["profile"],
+            "test"      => ["new"],
             "salir"     => ["index"]
         ];
 
