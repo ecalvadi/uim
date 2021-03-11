@@ -7,13 +7,17 @@
 
         <div class="collapse navbar-collapse" id="navbarColor01">
             <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
+                <li class="nav-item <?php if($params[0] == 'index') echo 'active'; ?>">
                     <a class="nav-link" href="/">Home
                         <span class="sr-only">(current)</span>
                     </a>
                 </li>
             </ul>
             <ul class="navbar-nav right-0">
+                <li class="nav-item <?php if($params[0] == 'courses') echo 'active'; ?>">
+                    <a class="nav-link" href="/courses">Mis cursos
+                    </a>
+                </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><?= $params[1] ?></a>
                     <div class="dropdown-menu">
