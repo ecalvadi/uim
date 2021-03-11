@@ -58,6 +58,7 @@ class AclSecurity
 
         $student_access = [
             "index"     => ["index"],
+            "test"      => ["index", "realize"],
             "salir"     => ["index"]
         ];
 

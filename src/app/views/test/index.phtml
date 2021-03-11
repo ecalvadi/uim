@@ -1,8 +1,32 @@
-<?php View::partial('menu/teacher', '', array('courses', $session['name'])); ?>
+<?php View::partial('menu/student', '', array('test', $session['name'])); ?>
 
 <main role="main" class="container">
     <div class="row">
         <div class="card col-md-8 offset-md-2">
+            <h4>Mis pruebas</h4>
+            <table class="table table-hover">
+                <thead>
+                <tr>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Descripción</th>
+                    <th scope="col">Fecha Inicio</th>
+                    <th scope="col">Fecha Termino</th>
+                    <th scope="col">Acciones</th>
+                </tr>
+                </thead>
+                <tbody>
+
+                <?php foreach($my_tests as $test) : ?>
+                    <tr>
+                        <th scope="row"><?=$test["name"]?></th>
+                        <td><?=$test["desc"]?></td>
+                        <td><?=$test["start"]?></td>
+                        <td><?=$test["end"]?></td>
+                        <td><a href="/test/realize/<?=$test['id']?>" class="btn btn-sm btn-primary disabled">Ingresar a la prueba</a></td>
+                    </tr>
+                <?php endforeach; ?>
+                </tbody>
+            </table>
         </div>
     </div>
 </main>
