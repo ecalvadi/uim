@@ -13,7 +13,7 @@
 
     <footer class="footer">
         <div class="container">
-            <span class="text-muted">UIM 2018.</span>
+            <span class="text-muted">UIM 2018. |  <?= 'Ejecutado en ', round((microtime(1) - $_SERVER['REQUEST_TIME_FLOAT']) * 1000, 4), ' ms. usando ', number_format(memory_get_usage() / 1048576, 3), ' MB de memoria'; ?></span>
         </div>
     </footer>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>

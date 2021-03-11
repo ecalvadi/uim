@@ -16,9 +16,29 @@ require_once CORE_PATH . 'kumbia/controller.php';
  */
 abstract class AppController extends Controller
 {
+    //Array global que guarda la sessión de toda
+    //la aplicación que exienden de AppController,
+    //se inicializa en null
+    public $session = array();
+    public $namespace = 'uim';
 
+    /**
+     * Método que se inicializa en cada llamado, este
+     * método obtiene los parámetros de la sesión y los
+     * guarda en la variable $session
+     */
     final protected function initialize()
     {
+        //Guardamos la sesión en el namespace simulac
+        //Esto puede crecer dependiendo de los datos
+        //de los usuarios administradores
+
+        $this->session = array(
+            'id' => Session::get('id', $this->namespace),
+            'name' => Session::get('name', $this->namespace),
+            'email' => Session::get('email', $this->namespace),
+            'role' => Session::get('role', $this->namespace),
+        );
 
     }
 
