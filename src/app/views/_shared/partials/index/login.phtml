@@ -17,11 +17,11 @@
                 <button class="btn btn-primary btn-block">Ingresar</button>
             </form>
 
-        <?php if(!$params[0]['status']) { ?>
+        <?php if(!$params['status']) { ?>
             <br>
             <div class="alert alert-dismissible alert-warning">
                 <button type="button" class="close" data-dismiss="alert">&times;</button>
-                <p class="mb-0"><?= $params[0]['msg'] ?></a>.</p>
+                <p class="mb-0"><?= $params['msg'] ?></a>.</p>
             </div>
         <?php } ?>
     </div>
