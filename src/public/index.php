@@ -98,6 +98,8 @@ define('PUBLIC_PATH', substr($_SERVER['SCRIPT_NAME'], 0, -9)); // - index.php st
  */
  $url = isset($_GET['_url']) ? $_GET['_url'] : '/';
 
+//Definimos la URL global para ACL-Security
+define("GLOBAL_URL", $url);
 /**
  * Carga el gestor de arranque
  * Por defecto el bootstrap del core.

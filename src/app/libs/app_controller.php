@@ -40,6 +40,12 @@ abstract class AppController extends Controller
             'role' => Session::get('role', $this->namespace),
         );
 
+        if(!$this->session["role"]) {
+            if(!(new AclSecurity())->acl()) Redirect::to("index");
+        } else {
+            if(!(new AclSecurity())->acl([$this->session["role"]])) Redirect::to("index");
+        }
+
     }
 
     final protected function finalize()

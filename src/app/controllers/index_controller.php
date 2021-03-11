@@ -9,10 +9,10 @@ class IndexController extends AppController
 
     public function index()
     {
-        $status = array('status' => true);
+        $this->status = array('status' => true);
 
         if(Input::hasPost(rut)) {
-            $status = $this->login(Input::post('rut'), Input::post('pass'));
+            $this->status = $this->login(Input::post('rut'), Input::post('pass'));
         }
     }
 
