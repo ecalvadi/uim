@@ -58,8 +58,8 @@
                                     <td><?=$test->start?></td>
                                     <td><?=$test->end?></td>
                                     <td>
-                                        <a href="/test/create/<?=$test->course_id?>/<?=$test->id?>" class="btn btn-sm btn-primary">Editar Prueba</a>
-                                        <a href="/test/view/<?=$test->id?>" class="btn btn-sm btn-info">Ver Prueba</a>
+                                        <a href="/test/create/<?=$test->course_id?>/<?=$test->id?>" class="btn btn-sm btn-primary <?php if($test->published) echo "disabled"; ?>" >Editar Prueba</a>
+                                        <!--<a href="/test/view/<?=$test->id?>" class="btn btn-sm btn-info">Ver Prueba</a>-->
                                     </td>
                                 </tr>
                             <?php endforeach; ?>
