@@ -8,7 +8,7 @@ return [
         /**
          * name: es el nombre de la aplicacion
          */
-        'name' => 'KUMBIAPHP PROJECT',
+        'name' => 'UIM',
         /**
          * database: base de datos a utilizar
          */

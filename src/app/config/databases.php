@@ -16,11 +16,11 @@ return [
         /**
          * password: clave del usuario de la base de datos
          */
-        'password' => '',
+        'password' => 'phnx',
         /**
          * test: nombre de la base de datos
          */
-        'name'     => 'test',
+        'name'     => 'uim',
         /**
          * type: tipo de motor de base de datos (mysql, pgsql, oracle o sqlite)
          */
